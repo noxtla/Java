@@ -3,29 +3,42 @@ package veryfree;
 import java.awt.Color;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 
 public class VeryFree  {
 
     public static void main(String[] args) {
       
-        ///Create an array list
         ArrayList<Empleado> ListaEmpleados = new ArrayList<Empleado>(); 
         
-        ///Add some elements
-        ///We can create the object "Empleado separate"
         ListaEmpleados.add(new Empleado("Ana", 54, 2500));
+        ListaEmpleados.add(new Empleado("Pedro", 54, 2500));
+        ListaEmpleados.add(new Empleado("Christian", 54, 2500));
+        ListaEmpleados.add(new Empleado("Noxtla", 54, 2500));
+        ListaEmpleados.add(new Empleado("Fany", 54, 2500));
         
+        ListaEmpleados.set(1, new Empleado ("Angel",87,3255));
         
-        ///Loop for print all elements
+        System.out.println(ListaEmpleados.get(4).dameEmpleados());
+        
+        int i=0;
         for (Empleado e : ListaEmpleados) {
-            System.out.println(e.dameEmpleados());
+            System.out.println(i+ " " +e.dameEmpleados());
+            i++;
         }
         
+        
+        ///Create an iterator
+        Iterator <Empleado> mi_iterador = ListaEmpleados.iterator();
+        
+        while (mi_iterador.hasNext()) {
+            System.out.println(mi_iterador.next().dameEmpleados());
+            
+        }
     }
 }
 
-///Class empleado
 class Empleado {
      public Empleado(String nombre, int edad, double salario) {
             this.nombre = nombre;
