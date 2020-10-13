@@ -1,0 +1,39 @@
+package veryfree;
+
+import java.awt.Color;
+import java.util.Scanner;
+import java.util.ArrayList;
+
+
+public class VeryFree  {
+
+    public static void main(String[] args) {
+      
+        ArrayList<Empleado> ListaEmpleados = new ArrayList<Empleado>(); 
+        
+        ListaEmpleados.add(new Empleado("Ana", 54, 2500));
+        
+        
+        for (Empleado e : ListaEmpleados) {
+            System.out.println(e.dameEmpleados());
+        }
+        
+    }
+}
+
+class Empleado {
+     public Empleado(String nombre, int edad, double salario) {
+            this.nombre = nombre;
+            this.edad = edad;
+            this.salario = salario;
+        }
+     
+     public String dameEmpleados(){
+         
+         return "El empleado se llama " + nombre + " Edad " + edad + " Salario " + salario;
+     }
+    
+        private  String nombre;
+        private  int edad;
+        private  double salario;
+}
