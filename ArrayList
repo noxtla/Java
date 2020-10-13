@@ -9,11 +9,15 @@ public class VeryFree  {
 
     public static void main(String[] args) {
       
+        ///Create an array list
         ArrayList<Empleado> ListaEmpleados = new ArrayList<Empleado>(); 
         
+        ///Add some elements
+        ///We can create the object "Empleado separate"
         ListaEmpleados.add(new Empleado("Ana", 54, 2500));
         
         
+        ///Loop for print all elements
         for (Empleado e : ListaEmpleados) {
             System.out.println(e.dameEmpleados());
         }
@@ -21,6 +25,7 @@ public class VeryFree  {
     }
 }
 
+///Class empleado
 class Empleado {
      public Empleado(String nombre, int edad, double salario) {
             this.nombre = nombre;
