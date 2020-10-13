@@ -1,0 +1,64 @@
+package veryfree;
+
+import java.awt.Color;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
+
+public class VeryFree  {
+
+    public static void main(String[] args) {
+        HashMap <String,Empleado> personal = new HashMap <String,Empleado>();
+        
+        ///If we put several elements
+        ///with the same key
+        ///java replace the element
+        ///only keep the last element
+        
+        personal.put("145", new Empleado("Juan",5));
+        personal.put("146", new Empleado("Ana",25));
+        personal.put("147", new Empleado("Sandra",457));
+        personal.put("148", new Empleado("Noxtla",587));
+        personal.put("149", new Empleado("Fany",478));
+        
+        ///remove method
+        personal.remove(145);
+        
+        ///put method
+        personal.put("147", new Empleado("Natalya",457));
+                
+                
+        ///Loop foe each
+        ///return a set
+        ///when we have a set we can manipulate the Map
+        
+        for (Map.Entry<String, Empleado> entrada: personal.entrySet()) {
+            String clave = entrada.getKey();
+            Empleado valor = entrada.getValue();
+            System.out.println("Clave " + clave + " Valor " + valor);
+        }
+    }
+}
+
+
+class Empleado {
+
+    private String nombre;
+    private int sueldo;
+
+    
+    public Empleado(String nombre, int sueldo) {
+        this.nombre = nombre;
+        this.sueldo = sueldo;
+    }
+    
+    public String toString (){
+    
+        return " nombre " +nombre+  " sueldo " + sueldo;
+    }
+    
+
+}
