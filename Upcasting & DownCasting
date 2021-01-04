@@ -1,0 +1,26 @@
+Deportivo miFerrari     =  new Deportivo(2,"Ferrari");
+/*La referencia de un objeto */  /*La instanciacion de un objeto*/
+/*Son dos cosas diferentes*/
+/*Juntos son un objeto creado e inicializado*/
+
+/*Conversion asendente */
+Coche miCoche = miFerrari;
+
+/*Eso es la conversion asendente*/
+/*Guardar un objeto de la SubClase (Ferrari) en un objeto de la superClase (Coche)*/
+
+
+/*Review*/
+/*Crear un objeto de la SubClase y guardarlo en un Objeto de la SUPERCLASE*/
+
+Coche miCoche = new Deportivo (2,"Ferrari")
+
+
+
+/*++++++++++++++++++++++++++++++++++++++++++*/
+/*Downcasting convertir objeto de la SUPERCLASE en uno de la SUBCLASE*/
+/*PREVIAMENTE DEBE HABER UN UPCASTING*/
+
+Coche miCoche = new Deportivo (2,"Ferrari") /*Aqui subimos*/
+
+Deportivo nuevoDeportivo = (Deportivo) coche; /*Aqui bajamos*/
