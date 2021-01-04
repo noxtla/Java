@@ -1,0 +1,51 @@
+/*Create class process and implement interface Runnable*/
+package javaapplication2;
+
+
+public class Process implements Runnable {
+    
+    String threadName;
+    
+     Process(String nombre){
+        threadName=nombre;
+    }
+     
+     
+     public void run(){
+        System.out.println("Comenzando "+threadName);
+        try {
+            for (int contar=0; contar<10; contar++){
+                Thread.sleep(400);
+                System.out.println("En "+threadName+", el recuento "+contar);
+            }
+        }catch (InterruptedException exc){
+            System.out.println(threadName + "Interrumpido.");
+        }
+        System.out.println("Terminando "+threadName);
+    }
+}
+/*End class Process*/
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+/*Main Class*/
+/*++++++++++++++++++++++++++++++++*/
+package javaapplication2;
+
+
+public class JavaApplication2 {
+
+
+    public static void main(String[] args) {
+       System.out.println("Hilo principal iniciando.");
+       
+       Process first = new Process("one");
+       Thread newThreadOne = new Thread(first);
+       newThreadOne.start();
+       
+       Process second = new Process("Second");
+       Thread newThreadSecond = new Thread(second);
+       newThreadSecond.start();
+        
+    }   
+    
+}
